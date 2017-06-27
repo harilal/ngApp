@@ -4,7 +4,16 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    children: []
+    redirectTo: '/employee',
+    pathMatch: 'full'
+  }, {
+    path: 'employee',
+    loadChildren: './employee/employee.module#EmployeeModule',
+
+  }, {
+    path: 'project',
+    loadChildren: './project/project.module#ProjectModule',
+
   }
 ];
 
