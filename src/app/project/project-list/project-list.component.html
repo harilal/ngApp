@@ -2,3 +2,9 @@
   project-list works!
 </p>
 <a [routerLink]="['/employee']">Employee</a>
+<ul>
+  <li *ngFor="let project of projectList;">
+    {{project.name}} {{project.owner.name}}
+  </li>
+
+</ul>
