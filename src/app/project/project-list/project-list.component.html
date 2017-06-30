@@ -1,10 +1,9 @@
-<p>
-  project-list works!
-</p>
-<a [routerLink]="['/employee']">Employee</a>
-<ul>
-  <li *ngFor="let project of projectList;">
-    {{project.name}} {{project.owner.name}}
-  </li>
-
-</ul>
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item"  *ngFor="let project of projectList;">
+        {{project.name}} {{project.owner.name}}
+      </li>
+    </ul>
+  </div>
+</div>
