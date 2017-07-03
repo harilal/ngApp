@@ -2,11 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
-  {
-    path: '',
-    redirectTo: '/employee',
-    pathMatch: 'full'
-  }, {
+   {
     path: 'employee',
     loadChildren: './employee/employee.module#EmployeeModule',
 
@@ -14,6 +10,10 @@ const routes: Routes = [
     path: 'project',
     loadChildren: './project/project.module#ProjectModule',
 
+  },{
+    path: '**',
+    redirectTo: 'employee',
+    pathMatch: 'full'
   }
 ];
 

@@ -6,10 +6,10 @@ const routes: Routes = [{
   children: [{
     path: "list",
     component: EmployeeListComponent
-  },
-  {
+  }, {
     path: "",
-    redirectTo: 'list'
+    redirectTo: 'list',
+    pathMatch: 'full'
   }]
 }];
 
