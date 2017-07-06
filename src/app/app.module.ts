@@ -4,6 +4,9 @@ import { HttpModule } from "@angular/http";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from 'app/shared/shared.module';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { ModalModule } from 'ngx-bootstrap/modal';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -11,8 +14,10 @@ import { SharedModule } from 'app/shared/shared.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
     SharedModule,
-    HttpModule
+    HttpModule,
+    ModalModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

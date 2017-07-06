@@ -10,12 +10,18 @@ import { Employee } from "app/employee/employee";
 export class EmployeeListComponent implements OnInit {
 
   employeelist:Employee[];
+  clickedEmployee:Employee;
+  showEmployee:boolean = false;
   constructor(private empService:EmployeeService) { }
   getEmployees(){
     this.empService.getEmployees().subscribe(data=>{
       console.log(data);
       this.employeelist = data;
     })
+  }
+  selectEmployee(employee:Employee){
+    this.clickedEmployee = employee;
+    this.showEmployee = true;
   }
   ngOnInit() {
     this.getEmployees();

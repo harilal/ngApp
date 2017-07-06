@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="col-md-6 text-left">
+    <h4>Add Employee</h4>
+  </div>
+</div>
+
+<div class="row text-center">
+  <div class="col-md-12 form-group">
+    
+    <md-input-container class="example-full-width">
+      <input mdInput placeholder="First name">
+    </md-input-container>
+  </div>
+  <div class="col-md-12 form-group">
+    <md-input-container class="example-full-width">
+      <input mdInput placeholder="Department">
+    </md-input-container>
+  </div>
+  <div class="col-md-12 form-group">
+    <md-select placeholder="Gender">
+      <md-option *ngFor="let gender of genderList" [value]="gender.code">{{ gender.name }}</md-option>
+    </md-select>
+  </div>
+  <div class="col-md-12 form-group">
+    <button md-raised-button >Save</button>
+  </div>
+</div>

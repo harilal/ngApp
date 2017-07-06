@@ -1,9 +1,31 @@
 <div class="row">
+  <div class="col-md-6 text-left">
+    <h4>Employee List</h4>
+  </div>
+  <div class="col-md-6 text-right">
+    <button [routerLink]="['/employee/add']" md-raised-button>New Employee</button>
+  </div>
+</div>
+<div class="row">
   <div class="col-md-12">
-    <ul class="list-group">
+    <!--<ul class="list-group">
       <li class="list-group-item" *ngFor="let emp of employeelist;">
         {{emp.name}} {{emp.department}}
       </li>
-    </ul>
+    </ul>-->
+    <p-dataTable [value]="employeelist">
+      <p-column field="name" header="Name">
+        
+      </p-column>
+      <p-column field="department" header="Department"></p-column>
+      <p-column field="gender" header="Gender"></p-column>
+      <p-column>
+        <ng-template let-col let-employee="rowData" pTemplate="body">
+          <button type="button" md-mini-fab (click)="selectEmployee(employee)" > <i class="fa fa-info" aria-hidden="true"></i></button>
+        </ng-template>
+      </p-column>
+    </p-dataTable>
   </div>
 </div>
+
+<lm-employee-view-pop [(openPop)]="showEmployee" [employee]="clickedEmployee"></lm-employee-view-pop>
