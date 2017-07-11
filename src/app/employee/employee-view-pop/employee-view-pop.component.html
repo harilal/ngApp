@@ -1,0 +1,26 @@
+<div bsModal *ngIf="openPop" [config]="{ show: true }" #eiModal="bs-modal" class="modal fade" tabindex="-1" role="dialog"
+  aria-labelledby="myLargeModalLabel" aria-hidden="true" (onShown)="onShown()" (onHidden)="onHidden()">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" (click)="eiModal.hide()" aria-label="Close">
+		          <span aria-hidden="true">&times;</span>
+		        </button>
+        <h5 class="modal-title">{{employee.name}}</h5>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-12">
+            {{employee.department}}
+          </div>
+        </div>
+         <div class="row">
+          <div class="col-md-12">
+            {{employee.gender}}
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
